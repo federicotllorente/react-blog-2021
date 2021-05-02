@@ -3,14 +3,16 @@
         "module": "CommonJS",
         "jsx": "react",
         "strict": true,
-        // "allowSyntheticDefaultImports": true,
-        // "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
         // "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node"
     },
     "include": [
         "./src",
         "./server",
+        "./__test__",
         "./index.ts",
         "./server.ts",
         "./.d.ts"

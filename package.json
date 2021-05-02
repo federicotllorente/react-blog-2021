@@ -4,9 +4,11 @@
   "description": "A blog site made with Typescript and the MERN stack (MongoDB, Express, React and Nodejs)",
   "main": "./index.ts",
   "scripts": {
-    "start": "node ./index.ts",
-    "dev": "nodemon ./index.ts",
-    "build": "webpack-cli --config ./webpack.config.js"
+    "start": "NODE_ENV=production ts-node ./index.ts",
+    "dev": "NODE_ENV=development nodemon ./index.ts",
+    "build": "NODE_ENV=production webpack-cli --config ./webpack.config.js",
+    "test": "NODE_ENV=test jest",
+    "test:watch": "NODE_ENV=test jest --watch"
   },
   "keywords": [
     "react",
@@ -19,7 +21,10 @@
     "expressjs",
     "node",
     "nodejs",
-    "mongoose"
+    "mongoose",
+    "jest",
+    "jestjs",
+    "sass"
   ],
   "author": "Federico Tejedor Llorente",
   "license": "ISC",
@@ -29,6 +34,7 @@
     "@babel/plugin-transform-runtime": "^7.13.15",
     "@babel/preset-env": "^7.13.15",
     "@babel/preset-react": "^7.13.13",
+    "@babel/preset-typescript": "^7.13.0",
     "@babel/register": "^7.13.16",
     "body-parser": "^1.19.0",
     "compression-webpack-plugin": "^7.1.2",
@@ -53,6 +59,7 @@
   "devDependencies": {
     "@types/cors": "^2.8.10",
     "@types/express": "^4.17.11",
+    "@types/jest": "^26.0.23",
     "@types/node": "^14.14.41",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
@@ -66,12 +73,15 @@
     "file-loader": "^6.2.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
+    "jest": "^26.6.3",
     "nodemon": "^2.0.7",
     "resolve-url-loader": "^3.1.2",
     "sass": "^1.32.11",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
+    "supertest": "^6.1.3",
     "terser-webpack-plugin": "^5.1.1",
+    "ts-jest": "^26.5.5",
     "ts-loader": "^9.1.1",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4",
